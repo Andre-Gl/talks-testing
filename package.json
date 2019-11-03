@@ -1,0 +1,23 @@
+{
+  "name": "talks-server-driven-mobile",
+  "version": "1.0.0",
+  "description": "Server Driven rendering for mobile talk website",
+  "main": "",
+  "dependencies": {
+    "reveal.js": "^3.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andre-Gl/talks-server-driven-mobile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre-Gl/talks-server-driven-mobile/issues"
+  },
+  "homepage": "https://github.com/Andre-Gl/talks-server-driven-mobile"
+}
