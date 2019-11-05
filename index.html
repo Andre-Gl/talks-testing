@@ -370,6 +370,104 @@ TestUtils.compareWithGolden(result, "OutputGoldenName");
             </ul>
         </section>
         <section>
+            <h3>JEST</h3>
+            <p class="text-left">Jest is a delightful JavaScript Testing Framework with a focus on simplicity.</p>
+        </section>
+        <section>
+            <h3>Example</h3>
+        </section>
+        <section>
+            <p>Write test</p>
+            <pre><code data-trim data-noescape class="javascript">
+                const sum = require('./sum');
+
+                test('adds 1 + 2 to equal 3', () => {
+                  expect(sum(1, 2)).toBe(3);
+                });
+            </code></pre>
+            <p>Run test</p>
+            <pre><code data-trim data-noescape>
+                > jest
+            </code></pre>
+            <p>Result</p>
+            <pre><code data-trim data-noescape>
+                PASS  ./sum.test.js
+                ✓ adds 1 + 2 to equal 3 (5ms)
+            </code></pre>
+        </section>
+        <section>
+            <h3>Snapshot Testing</h3>
+            <pre><code data-trim data-noescape>
+                __tests__/link.react.test.js
+            </code></pre>
+            <pre><code data-trim data-noescape class="javascript">
+                import React from 'react';
+                import Link from '../Link.react';
+                import renderer from 'react-test-renderer';
+
+                it('renders correctly', () => {
+                  const tree = renderer
+                    .create(&lt;Link page="http://www.facebook.com"&gt;Facebook&lt;/Link&gt;)
+                    .toJSON();
+                  expect(tree).toMatchSnapshot();
+                });
+            </code></pre>
+        </section>
+        <section>
+            <h3>Snapshot Result</h3>
+            <pre><code data-trim data-noescape>
+                __tests__/__snapshots__/link.react.test.js.snap
+            </code></pre>
+            <pre><code data-trim data-noescape class="javascript">
+                exports[`renders correctly 1`] = `
+                &lt;a
+                className=&quot;normal&quot;
+                href=&quot;http://www.facebook.com&quot;
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                &gt;
+                Facebook
+                &lt;/a&gt;
+                `;
+            </code></pre>
+        </section>
+        <section>
+            <h3>Async Tests</h3>
+            <pre><code data-trim data-noescape class="javascript">
+                // The assertion for a promise must be returned.
+                it('works with promises', () => {
+                  expect.assertions(1);
+                  return user.getUserName(4)
+                    .then(data => expect(data).toEqual('Mark'));
+                });
+            </code></pre>
+        </section>
+        <section>
+            <h3>Async Tests</h3>
+            <pre><code data-trim data-noescape class="javascript">
+                it('works with resolves', () => {
+                  expect.assertions(1);
+                  return expect(user.getUserName(5)).resolves.toEqual('Paul');
+                });
+            </code></pre>
+        </section>
+        <section>
+            <h3>Mocks</h3>
+            <p>Timers</p>
+            <pre><code data-trim data-noescape class="javascript">
+                jest.useFakeTimers();
+            </code></pre>
+            <p>Mock Modules</p>
+            <pre><code data-trim data-noescape class="javascript">
+                jest.genMockFromModule('fs');
+            </code></pre>
+            <p>Mock Functions</p>
+            <pre><code data-trim data-noescape class="javascript">
+                const mockFn = jest.fn()
+                  .mockImplementation(scalar => 42 + scalar);
+            </code></pre>
+        </section>
+        <section>
             <h3>Thank you for listening!</h3>
         </section>
         <section>
