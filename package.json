@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Andre-Gl/talks-server-driven-mobile.git"
+    "url": "https://github.com/Andre-Gl/talks-testing.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Andre-Gl/talks-server-driven-mobile/issues"
+    "url": "https://github.com/Andre-Gl/talks-testingissues"
   },
-  "homepage": "https://github.com/Andre-Gl/talks-server-driven-mobile"
+  "homepage": "https://github.com/Andre-Gl/talks-testing"
 }
