@@ -324,6 +324,45 @@
             <img src="https://2.bp.blogspot.com/-YTzv_O4TnkA/VTgexlumP1I/AAAAAAAAAJ8/57-rnwyvP6g/s1600/image02.png" alt="">
         </section>
         <section>
+            <h3>TDD*</h3>
+            <p>*Test-driven development</p>
+        </section>
+        <section>
+            <p class="text-left">Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the software is improved so that the tests pass.</p>
+            <p class="text-left"><small><a href="https://en.wikipedia.org/wiki/Test-driven_development">https://en.wikipedia.org/wiki/Test-driven_development</a></small></p>
+        </section>
+        <section>
+            <h3>TDD cycle</h3>
+            <img class="icon" height="600" src="img/TDD.png" alt="">
+        </section>
+        <section>
+            <h3>TDD +</h3>
+            <ul>
+              <li>Documentation</li>
+              <li>Architecture</li>
+              <li>Modularity</li>
+              <li>Helps prevents defects</li>
+              <li>Automated regression test suite</li>
+              <li>etc...</li>
+            </ul>
+        </section>
+        <section>
+            <h3>TDD -</h3>
+            <ul>
+              <li>Maintenance</li>
+              <li>Time</li>
+              <li>Hard to apply to legacy code</li>
+              <li>Hard to adapt to the flow</li>
+              <li>Tests may be hard to write, esp. beyond the unit testing level
+</li>
+              <li>etc...</li>
+            </ul>
+        </section>
+        <section>
+            <h3>TDD cycle</h3>
+            <img height="600" src="img/TDD-negatives.jpg" alt="">
+        </section>
+        <section>
             <h2>Verifying with "Goldens"</h2>
         </section>
         <section>
@@ -340,12 +379,12 @@
             <img style="float: left; width: 400px;" src="img/JSON-screenshot.png" alt="">
         </section>
         <section>
-          <p class="text-left">"Goldens" from one system can be passed as input into anther systems and so on.</p>
-<pre><code data-trim data-noescape>
-var golden = TestUtils.readGolden("InputGoldenName");
-var result = ClassUnderTest.exec(golden);
-TestUtils.compareWithGolden(result, "OutputGoldenName");
-</code></pre>
+            <p class="text-left">"Goldens" from one system can be passed as input into anther systems and so on.</p>
+            <pre><code data-trim data-noescape>
+            var golden = TestUtils.readGolden("InputGoldenName");
+            var result = ClassUnderTest.exec(golden);
+            TestUtils.compareWithGolden(result, "OutputGoldenName");
+            </code></pre>
         </section>
         <section>
             <h3>Result of "Goldens"</h3>
@@ -373,6 +412,7 @@ TestUtils.compareWithGolden(result, "OutputGoldenName");
         <section>
             <h3>JEST</h3>
             <p class="text-left">Jest is a delightful JavaScript Testing Framework with a focus on simplicity.</p>
+            <p class="text-left"><small><a href="https://jestjs.io/">https://jestjs.io/</a></small></p>
         </section>
         <section>
             <h3>Example</h3>
