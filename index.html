@@ -395,7 +395,7 @@
             <img src="img/Diff-visual-screenshot.png" alt="">
         </section>
         <section>
-            <h3>Testing strategy</h3>
+            <h3>CI/CD Testing Strategy</h3>
             <ul>
                 <li class="fragment"><strong>Before integrating</strong>
                     <br >
@@ -415,10 +415,41 @@
             <p class="text-left"><small><a href="https://jestjs.io/">https://jestjs.io/</a></small></p>
         </section>
         <section>
+            <h3>Test declaration language</h3>
+            <ul>
+                <li>
+                    <p class="text-left">xUnit</p>
+                    <p class="text-left"><small><a href="https://en.wikipedia.org/wiki/XUnit">https://en.wikipedia.org/wiki/XUnit</a></small></p>
+                </li>
+                <li>
+                    <p class="text-left">RSpec</p>
+                    <p class="text-left"><small><a href="https://en.wikipedia.org/wiki/RSpec">https://en.wikipedia.org/wiki/RSpec</a></small></p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>xUnit</h3>
+            <pre><code data-trim data-noescape class="javascript">
+              test(/* test description */, () => {
+                // assertions
+              });
+            </code></pre>
+        </section>
+        <section>
+            <h3>RSpec</h3>
+            <pre><code data-trim data-noescape class="javascript">
+              describe(/* suite description */, () => {
+                it(/* test description */, () => {
+                  // assertions
+                });
+              });
+            </code></pre>
+        </section>
+        <section>
             <h3>Example</h3>
         </section>
         <section>
-            <p>Write test</p>
+            <p class="text-left">Write test</p>
             <pre><code data-trim data-noescape class="javascript">
                 const sum = require('./sum');
 
@@ -426,11 +457,11 @@
                   expect(sum(1, 2)).toBe(3);
                 });
             </code></pre>
-            <p>Run test</p>
+            <p class="text-left">Run test</p>
             <pre><code data-trim data-noescape>
                 > jest
             </code></pre>
-            <p>Result</p>
+            <p class="text-left">Result</p>
             <pre><code data-trim data-noescape>
                 PASS  ./sum.test.js
                 ✓ adds 1 + 2 to equal 3 (5ms)
@@ -448,7 +479,7 @@
 
                 it('renders correctly', () => {
                   const tree = renderer
-                    .create(&lt;Link page="http://www.facebook.com"&gt;Facebook&lt;/Link&gt;)
+                    .create(&lt;Link page="http://www.facebook.com"&gt;FB&lt;/Link&gt;)
                     .toJSON();
                   expect(tree).toMatchSnapshot();
                 });
@@ -467,7 +498,7 @@
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 &gt;
-                Facebook
+                FB
                 &lt;/a&gt;
                 `;
             </code></pre>
@@ -523,20 +554,20 @@
       Reveal.initialize({
       	dependencies: [
       		// Interpret Markdown in <section> elements
-      		{ src: 'node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      		{ src: 'node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      		{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      		{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 
       		// Syntax highlight for <code> elements
-      		{ src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true },
+      		{ src: 'reveal.js/plugin/highlight/highlight.js', async: true },
 
       		// Zoom in and out with Alt+click
-      		{ src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+      		{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
 
       		// Speaker notes
-      		{ src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+      		{ src: 'reveal.js/plugin/notes/notes.js', async: true },
 
       		// MathJax
-      		{ src: 'node_modules/reveal.js/plugin/math/math.js', async: true }
+      		{ src: 'reveal.js/plugin/math/math.js', async: true }
       	]
       });
 		</script>
