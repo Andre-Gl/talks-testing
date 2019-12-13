@@ -29,6 +29,18 @@
 			<div class="slides">
         <section><h1>Testing</h1></section>
         <section>
+            <ul>
+                <li>Why write test?</li>
+                <li>Type of tests and what we test</li>
+                <li>Properties of good tests</li>
+                <li>Difference between unit/integration/functional tests</li>
+                <li>Test-driven development</li>
+                <li>Verifying with "Goldens"</li>
+                <li>CI/CD strategies</li>
+                <li>Jest</li>
+            </ul>
+        </section>
+        <section>
             <h2>Why write tests?</h2>
             <blockquote class="fragment">
                 To catch bugs!
@@ -74,8 +86,7 @@
                 <strong>Perspective:</strong>
                 <br >
                 <span>Correctness,</span>
-                <span>Usability (General),</span>
-                <span>Usability (Specific axix: I18n, Accessibility)</span>
+                <span>Usability (General, Specific axis: I18n, Accessibility)</span>
             </p>
             <p class="text-left fragment">
                 <strong>Misc:</strong>
@@ -115,9 +126,9 @@
             <h3>Properties of a good test</h3>
             <ul>
                 <li>Each test method exercises one thing</li>
-                <li>Comprehensive</li>
-                <li>Deterministic</li>
-                <li>Hermetic</li>
+                <li>Comprehensive (all cases)</li>
+                <li>Deterministic (stable output)</li>
+                <li>Hermetic (independent)</li>
             </ul>
         </section>
         <section>
@@ -160,7 +171,8 @@
             </ul>
         </section>
         <section>
-            <h2>Differences between tests</h2>
+            <h2>Difference between</h2>
+            <p>unit/integration/functional tests</p>
         </section>
         <section>
             <img style="float: right" src="img/1.png" alt="">
@@ -324,7 +336,7 @@
             <img src="https://2.bp.blogspot.com/-YTzv_O4TnkA/VTgexlumP1I/AAAAAAAAAJ8/57-rnwyvP6g/s1600/image02.png" alt="">
         </section>
         <section>
-            <h3>TDD*</h3>
+            <h2>TDD*</h3>
             <p>*Test-driven development</p>
         </section>
         <section>
@@ -370,6 +382,21 @@
             <p class="text-left">A program is deterministic, or repeatable, if it produces the very same output when given the same input no matter how many times it is run.</p>
         </section>
         <section>
+            <h3>Deterministic program</h3>
+            <p>YES</p>
+            <pre><code data-trim data-noescape class="JavaScript">
+              function concat(a, b) {
+                return a + b;
+              }
+            </pre></code>
+            <p>NO</p>
+            <pre><code data-trim data-noescape class="JavaScript">
+              function getRandomFloat() {
+                return Math.random();
+              }
+            </pre></code>
+        </section>
+        <section>
             <h3>What is "Golden"</h3>
             <p class="text-left">Golden is expected result of some deterministic program execution stored in a form of text (or JSON) file or as a screenshot of UI state.</p>
         </section>
@@ -395,22 +422,38 @@
             <img src="img/Diff-visual-screenshot.png" alt="">
         </section>
         <section>
-            <h3>CI/CD Testing Strategy</h3>
-            <ul>
-                <li class="fragment"><strong>Before integrating</strong>
-                    <br >
-                    Pros: greener build. Cons: much slower dev.
-                </li>
-                <li class="fragment"><strong>After integrating</strong>
-                    <br >
-                    Pros: faster dev. Cons: build less green. Buildcops presence required.
-                </li>
-                <li class="fragment"><strong>Combined</strong>
-                </li>
-            </ul>
+            <h2>CI Testing Strategy</h2>
         </section>
         <section>
-            <h3>JEST</h3>
+            <h3>What is CI</h3>
+            <p class="text-left">Continuous integration (CI) is the practice of merging all developers' working copies to a shared mainline several times a day.</p>
+            <p class="text-left">
+              <small><a href="https://en.wikipedia.org/wiki/Continuous_integration">
+                https://en.wikipedia.org/wiki/Continuous_integration
+              </a></small>
+            </p>
+        </section>
+        <section>
+            <h3>Test Before integrating</h3>
+            <p>Commit &#8594; Run Tests on commit &#8594; Integrate into master</p>
+            <p class="text-left fragment">+: greener build.</p>
+            <p class="text-left fragment">-: much slower dev.</p>
+        </section>
+        <section>
+            <h3>Tests After integrating</h3>
+            <p>Commit &#8594; Integrate into master &#8594; Run Tests on latest master</p>
+            <p class="text-left fragment">+: faster dev.</p>
+            <p class="text-left fragment">-: build less green. Buildcops presence required.</p>
+        </section>
+        <section>
+            <h3>Combined testing</h3>
+            <p>Commit &#8594; Run Tests (unit) on commit &#8594; Integrate &#8594; Run Tests (integration) on latest master</p>
+        </section>
+        <section>
+            <h2>Jest</h2>
+        </section>
+        <section>
+            <h3>Jest</h3>
             <p class="text-left">Jest is a delightful JavaScript Testing Framework with a focus on simplicity.</p>
             <p class="text-left"><small><a href="https://jestjs.io/">https://jestjs.io/</a></small></p>
         </section>
@@ -430,19 +473,25 @@
         <section>
             <h3>xUnit</h3>
             <pre><code data-trim data-noescape class="javascript">
-              test(/* test description */, () => {
-                // assertions
-              });
+              describe('yourModule', () => {
+                test('if it does this thing', () => {}
+                test('if it does the other thing', () => {}
+              })
+            </code></pre>
+            <pre><code data-trim data-noescape class="bash">
+              yourModule > if it does this thing
             </code></pre>
         </section>
         <section>
             <h3>RSpec</h3>
             <pre><code data-trim data-noescape class="javascript">
-              describe(/* suite description */, () => {
-                it(/* test description */, () => {
-                  // assertions
-                });
-              });
+              describe('yourModule', () => {
+                it('should do this thing', () => {}
+                it('should do the other thing', () => {}
+              })
+            </code></pre>
+            <pre><code data-trim data-noescape class="bash">
+              yourModule > should do this thing
             </code></pre>
         </section>
         <section>
@@ -451,6 +500,7 @@
         <section>
             <p class="text-left">Write test</p>
             <pre><code data-trim data-noescape class="javascript">
+                // sum.test.js
                 const sum = require('./sum');
 
                 test('adds 1 + 2 to equal 3', () => {
@@ -458,18 +508,18 @@
                 });
             </code></pre>
             <p class="text-left">Run test</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="bash">
                 > jest
             </code></pre>
             <p class="text-left">Result</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="bash">
                 PASS  ./sum.test.js
                 ✓ adds 1 + 2 to equal 3 (5ms)
             </code></pre>
         </section>
         <section>
             <h3>Snapshot Testing</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="bash">
                 __tests__/link.react.test.js
             </code></pre>
             <pre><code data-trim data-noescape class="javascript">
@@ -487,7 +537,7 @@
         </section>
         <section>
             <h3>Snapshot Result</h3>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim data-noescape class="bash">
                 __tests__/__snapshots__/link.react.test.js.snap
             </code></pre>
             <pre><code data-trim data-noescape class="javascript">
@@ -515,15 +565,6 @@
             </code></pre>
         </section>
         <section>
-            <h3>Async Tests</h3>
-            <pre><code data-trim data-noescape class="javascript">
-                it('works with resolves', () => {
-                  expect.assertions(1);
-                  return expect(user.getUserName(5)).resolves.toEqual('Paul');
-                });
-            </code></pre>
-        </section>
-        <section>
             <h3>Mocks</h3>
             <p>Timers</p>
             <pre><code data-trim data-noescape class="javascript">
@@ -540,10 +581,14 @@
             </code></pre>
         </section>
         <section>
-            <h3>Thank you for listening!</h3>
+            <h3>And much more...</h3>
+            <p><small><a href="https://jestjs.io/">https://jestjs.io/</a></small></p>
         </section>
         <section>
-            <h3>Please, ask questions!</h3>
+            <h2>Thank you for listening!</h2>
+        </section>
+        <section>
+            <h2>Please, ask questions!</h2>
         </section>
 			</div>
 		</div>
